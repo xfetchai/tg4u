@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержать TG4U — Донаты и реквизиты</title>
+    <meta name="description" content="Поддержите проект TG4U. Доступны донат через Tribute в Telegram, USDT TRC, TON и оплата через СБП.">
+    <meta name="keywords" content="донат tg4u, поддержать проект, tribute, usdt trc, ton, сбп">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106778446', 'ym');
+
+        ym(106778446, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: 'dataLayer',
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106778446" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-soft: rgba(18, 18, 26, 0.82);
+            --accent-blue: #0088cc;
+            --accent-cyan: #00d4ff;
+            --accent-purple: #7b61ff;
+            --accent-pink: #ff6b9d;
+            --text-primary: #ffffff;
+            --text-secondary: #8a8a9a;
+            --gradient-main: linear-gradient(135deg, #0088cc 0%, #00d4ff 50%, #7b61ff 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Onest', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-animation,
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .bg-animation {
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 136, 204, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(123, 97, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        .grid-overlay {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .page {
+            width: min(1100px, calc(100vw - 2rem));
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 136, 204, 0.3);
+        }
+
+        .logo-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        .logo-text {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.15rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 999px;
+            transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            color: var(--text-primary);
+            border-color: rgba(0, 136, 204, 0.35);
+            background: rgba(0, 136, 204, 0.08);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 0 3rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 136, 204, 0.1);
+            border: 1px solid rgba(0, 136, 204, 0.3);
+            border-radius: 999px;
+            font-size: 0.875rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.15s both;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ff88;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.25s both;
+        }
+
+        .hero-title span {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.35s both;
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .donate-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 1.75rem;
+            border-radius: 24px;
+            background: var(--bg-card-soft);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .donate-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .donate-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .donate-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 212, 255, 0.35);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .donate-card.highlight {
+            border-color: rgba(255, 107, 157, 0.28);
+            background:
+                linear-gradient(180deg, rgba(255, 107, 157, 0.08), rgba(18, 18, 26, 0.88)),
+                var(--bg-card-soft);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.18), rgba(123, 97, 255, 0.2));
+        }
+
+        .highlight .card-icon {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(123, 97, 255, 0.22));
+        }
+
+        .card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent-cyan);
+        }
+
+        .highlight .card-icon svg {
+            stroke: #ff93ba;
+        }
+
+        .card-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            width: fit-content;
+            padding: 0.35rem 0.7rem;
+            margin-bottom: 1rem;
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 212, 255, 0.18);
+            border-radius: 999px;
+            background: rgba(0, 212, 255, 0.06);
+        }
+
+        .highlight .card-label {
+            color: #ff93ba;
+            border-color: rgba(255, 107, 157, 0.2);
+            background: rgba(255, 107, 157, 0.08);
+        }
+
+        .card-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+
+        .detail-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-top: auto;
+            padding: 0.85rem 0.95rem;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .detail-box code,
+        .detail-box span {
+            min-width: 0;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .detail-box code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+
+        .crypto-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin-top: auto;
+        }
+
+        .crypto-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .crypto-name {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-cyan);
+        }
+
+        .button-row {
+            display: flex;
+            gap: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .action-button,
+        .ghost-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            min-height: 52px;
+            padding: 0.95rem 1.2rem;
+            border: none;
+            border-radius: 999px;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+
+        .action-button {
+            color: #fff;
+            background: var(--gradient-main);
+            box-shadow: 0 10px 28px rgba(0, 136, 204, 0.28);
+        }
+
+        .action-button:hover,
+        .ghost-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .ghost-button {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ghost-button:hover {
+            border-color: rgba(0, 212, 255, 0.28);
+            background: rgba(0, 212, 255, 0.08);
+        }
+
+        .cta-note {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        footer .contact {
+            margin-top: 0.75rem;
+        }
+
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 2%) rotate(1deg); }
+            66% { transform: translate(-1%, 1%) rotate(-1deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 920px) {
+            .donate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                width: min(100vw - 1.5rem, 1100px);
+                padding-top: 1.25rem;
+                padding-bottom: 3rem;
+            }
+
+            .topbar {
+                flex-direction: column;
+                align-items: stretch;
+                margin-bottom: 2.5rem;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+
+            .back-link {
+                justify-content: center;
+            }
+
+            .hero {
+                padding-top: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .donate-card {
+                padding: 1.35rem;
+                border-radius: 20px;
+            }
+
+            .button-row {
+                flex-direction: column;
+            }
+
+            .action-button,
+            .ghost-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="page">
+        <header class="topbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path>
+                    </svg>
+                </div>
+                <span class="logo-text">TG4U</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Вернуться на главную</span>
+            </a>
+        </header>
+
+        <section class="hero">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Помогаете держать сервис онлайн
+            </div>
+            <h1 class="hero-title">Поддержать <span>TG4U</span></h1>
+            <p class="hero-subtitle">
+                Если сервис помогает вам оставаться на связи, можно поддержать проект любым удобным способом.
+                Все донаты идут на оплату серверов и поддержку инфраструктуры.
+            </p>
+        </section>
+
+        <section class="donate-grid">
+            <article class="donate-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                        <path d="M2 10h20"></path>
+                    </svg>
+                </div>
+                <div class="card-label">Банк</div>
+                <h2 class="card-title">СБП</h2>
+                <p class="card-text">
+                    По этой ссылке откроется страница, где можно оформить перевод.
+                </p>
+                <div class="button-row">
+                    <a href="https://finance.ozon.ru/apps/sbp/ozonbankpay/019d2a8d-9750-70cb-8d81-a5a3069cd3b9" target="_blank" rel="noopener noreferrer" class="action-button">Поддержать проект</a>
+                </div>
+            </article>
+
+            <article class="donate-card highlight">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2 11 13"></path>
+                        <path d="M22 2 15 22 11 13 2 9 22 2z"></path>
+                    </svg>
+                </div>
+                <div class="card-label">Telegram</div>
+                <h2 class="card-title">Донат через Tribute</h2>
+                <p class="card-text">
+                    Самый быстрый вариант для пользователей Telegram. Откроется страница Tribute, где можно выбрать сумму и отправить поддержку в пару касаний.
+                </p>
+                <div class="button-row">
+                    <a href="https://web.tribute.tg/d/HuL" target="_blank" rel="noopener noreferrer" class="action-button">Открыть Tribute</a>
+                </div>
+            </article>
+
+            <article class="donate-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1v22"></path>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <div class="card-label">Crypto</div>
+                <h2 class="card-title">Крипта</h2>
+                <p class="card-text">
+                    Если удобнее поддержать проект в крипте, можно выбрать любой из двух адресов ниже и просто скопировать нужный.
+                </p>
+                <div class="crypto-list">
+                    <div class="crypto-item">
+                        <span class="crypto-name">USDT TRC</span>
+                        <div class="detail-box">
+                            <code id="usdtValue">TY4UnjripPrwfsdTvocaCVukgnknnkWD1f</code>
+                            <button class="ghost-button" type="button" onclick="copyValue('usdtValue', this)">Скопировать</button>
+                        </div>
+                    </div>
+                    <div class="crypto-item">
+                        <span class="crypto-name">TON</span>
+                        <div class="detail-box">
+                            <code id="tonValue">UQCyKCsiJkc_940LR4KXFCfT2EPLRFvQQvZmvWGSng39087l</code>
+                            <button class="ghost-button" type="button" onclick="copyValue('tonValue', this)">Скопировать</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="cta-note">Спасибо за поддержку проекта и стабильную работу сервиса.</p>
+
+        <footer>
+            <p>© 2026 TG4U — Страница поддержки проекта</p>
+            <p class="contact">Контакты: <a href="tg://resolve?domain=xfetchai" target="_blank">@xfetchai</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function copyValue(id, button) {
+            const value = document.getElementById(id).textContent.trim();
+            const originalText = button.textContent;
+
+            navigator.clipboard.writeText(value).then(function () {
+                button.textContent = 'Скопировано';
+                setTimeout(function () {
+                    button.textContent = originalText;
+                }, 1800);
+            });
+        }
+    </script>
+</body>
+</html>
